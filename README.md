@@ -22,7 +22,7 @@ A simple **task management app** built with **Firebase Authentication, Firestore
 
 ### **1️⃣ Clone the Repository**  
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/DivideFlow.git
+git clone https://github.com/RedChargeXT/DivideFlow.git
 cd DivideFlow
 ```
 
