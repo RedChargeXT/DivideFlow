@@ -1,4 +1,4 @@
-### **📌 DivideFlow - Task Management App**  
+# **📌 DivideFlow - Task Management App**  
 
 A simple **task management app** built with **Firebase Authentication, Firestore, and JavaScript**. Users can **sign up, log in, add, complete, and delete tasks** seamlessly.  
 
