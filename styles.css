@@ -1,20 +1,29 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f4f4f4;
 }
 
 .matrix {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    max-width: 600px;
-    margin: auto;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
 .quadrant {
-    border: 2px solid black;
-    padding: 20px;
-    min-height: 150px;
-    background-color: #f9f9f9;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.task-form {
+    margin-top: 20px;
+}
+
+.task-form input, .task-form select, .task-form button {
+    padding: 8px;
+    margin: 5px;
 }
