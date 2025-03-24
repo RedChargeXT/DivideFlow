@@ -1,7 +1,3 @@
-Here's a **README.md** file for your GitHub repository:  
-
----
-
 ### **📌 DivideFlow - Task Management App**  
 
 A simple **task management app** built with **Firebase Authentication, Firestore, and JavaScript**. Users can **sign up, log in, add, complete, and delete tasks** seamlessly.  
