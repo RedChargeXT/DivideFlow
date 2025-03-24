@@ -5,13 +5,13 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCDe_fZ_CylKnD96dyjxR8fwxq3du3aZAU",
-    authDomain: "eisen-hower-matrix.firebaseapp.com",
-    projectId: "eisen-hower-matrix",
-    storageBucket: "eisen-hower-matrix.appspot.com",
-    messagingSenderId: "940409444267",
-    appId: "1:940409444267:web:efb800a966f287d89824ee",
-    measurementId: "G-WQNMG62GRH"
+    apiKey: config.apiKey,
+    authDomain: config.authDomain,
+    projectId: config.projectId,
+    storageBucket: config.storageBucket,
+    messagingSenderId: config.messagingSenderId,
+    appId: config.appId,
+    measurementId: config.measurementId
 };
 
 // Initialize Firebase
