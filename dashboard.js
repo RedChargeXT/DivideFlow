@@ -1,21 +1,23 @@
-import { auth } from "./firebase.js";
-import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { auth, db } from "./firebase.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Check if user is logged in
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (user) {
-        document.getElementById("user-email").innerText = `Logged in as: ${user.email}`;
-    } else {
-        // If not logged in, send them back to login page
-        window.location.href = "index.html";
-    }
-});
+        console.log("✅ User is logged in:", user.uid);
 
-// Logout Function
-document.getElementById("logout-btn").addEventListener("click", () => {
-    signOut(auth).then(() => {
-        window.location.href = "index.html"; // Redirect after logout
-    }).catch((error) => {
-        alert("❌ Error: " + error.message);
-    });
+        // Fetch user data from Firestore
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+
+        if (userDoc.exists()) {
+            console.log("User Data:", userDoc.data());
+            document.getElementById("user-name").innerText = `Welcome, ${userDoc.data().name}!`;
+        } else {
+            console.log("⚠️ No user data found in Firestore.");
+        }
+    } else {
+        console.log("❌ No user logged in. Redirecting to login...");
+        window.location.href = "login.html"; // Redirect if not authenticated
+    }
 });
