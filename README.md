@@ -40,14 +40,19 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// 🔹 Your Firebase Config (Replace with your credentials)
+// 🔹 Your Firebase Config (Replace with your credentials by creating config.json)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+const response = await fetch('config.json');
+const config = await response.json();
+const firebaseConfig = {
+    apiKey: config.apiKey,
+    authDomain: config.authDomain,
+    projectId: config.projectId,
+    storageBucket: config.storageBucket,
+    messagingSenderId: config.messagingSenderId,
+    appId: config.appId,
+    measurementId: config.measurementId
+}
 };
 
 // Initialize Firebase
@@ -93,4 +98,3 @@ This project is **open-source** under the **MIT License**.
 
 ---
 
-This **README.md** is perfect for GitHub! You can copy-paste it directly into your repository. Let me know if you want modifications. 🚀🔥
